@@ -42,6 +42,7 @@ resource "aws_lambda_function" "example" {
   runtime = "nodejs8.10"
 
   role = "${aws_iam_role.lambda_exec.arn}"
+  depends_on = ["aws_s3_bucket.s3bucket"]
 }
 
 # IAM role which dictates what other AWS services the Lambda function
