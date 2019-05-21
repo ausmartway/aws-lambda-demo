@@ -9,7 +9,7 @@ data "archive_file" "examplezip" {
 }
 
 resource "aws_s3_bucket" "s3bucket" {
-  bucket = "terraform-lambda-example-yulei"
+  bucket = "terraform-lambda-tfe-example-yulei"
   acl    = "private"
 
   versioning {
@@ -18,7 +18,7 @@ resource "aws_s3_bucket" "s3bucket" {
 }
 
 resource "aws_s3_bucket_object" "fileobject" {
-  bucket = "terraform-lambda-example-yulei"
+  bucket = "terraform-lambda-tfe-example-yulei"
   key    = "example.zip"
   source = "${path.module}/example.zip"
   # The filemd5() function is available in Terraform 0.11.12 and later
@@ -32,7 +32,7 @@ resource "aws_lambda_function" "example" {
   function_name = "ServerlessExample"
 
   # The bucket name as created earlier with "aws s3api create-bucket"
-  s3_bucket = "terraform-lambda-example-yulei"
+  s3_bucket = "terraform-lambda-tfe-example-yulei"
   s3_key    = "example.zip"
 
   # "main" is the filename within the zip file (main.js) and "handler"
