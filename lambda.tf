@@ -4,8 +4,8 @@ provider "aws" {
 
 data "archive_file" "examplezip" {
     type        = "zip"
-    source_dir  = "lambda"
-    output_path = "example.zip"
+    source_dir  = "${path.module}/lambda/"
+    output_path = "${path.module}/example.zip"
 }
 
 resource "aws_s3_bucket" "s3bucket" {
@@ -20,11 +20,11 @@ resource "aws_s3_bucket" "s3bucket" {
 resource "aws_s3_bucket_object" "fileobject" {
   bucket = "terraform-lambda-example-yulei"
   key    = "example.zip"
-  source = "example.zip"
+  source = "${path.module}/example.zip"
   # The filemd5() function is available in Terraform 0.11.12 and later
   # For Terraform 0.11.11 and earlier, use the md5() function and the file() function:
   # etag = "${md5(file("path/to/file"))}"
-  etag = "${filemd5("example.zip")}"
+  etag = "${filemd5("${path.module}/example.zip")}"
 }
 
 
