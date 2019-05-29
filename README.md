@@ -1,2 +1,3 @@
 # aws-lambda-demo
-deploy lambda using terraform
+deploy a simple node.js application into lambda using terraform.
+
