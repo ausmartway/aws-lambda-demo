@@ -1,0 +1,6 @@
+example.zip
+*.tfstate
+
+.terraform/plugins/darwin_amd64/terraform-provider-archive_v1.2.2_x4
+.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.12.0_x4
+.terraform/plugins/darwin_amd64/lock.json
