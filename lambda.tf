@@ -30,7 +30,7 @@ resource "aws_s3_bucket_object" "fileobject" {
 
 
 resource "aws_lambda_function" "example" {
-  function_name = "ServerlessExample"
+  function_name = "ServerlessExampleyulei"
 
   # The bucket name as created earlier with "aws s3api create-bucket"
   s3_bucket = "terraform-lambda-tfe-example-yulei"
