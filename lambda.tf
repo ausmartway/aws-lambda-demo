@@ -49,7 +49,7 @@ resource "aws_lambda_function" "example" {
 # IAM role which dictates what other AWS services the Lambda function
 # may access.
 resource "aws_iam_role" "lambda_exec" {
-  name = "serverless_example_lambda"
+  name = "serverless_example_lambda_yulei"
 
   assume_role_policy = <<EOF
 {
