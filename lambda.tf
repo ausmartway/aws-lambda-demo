@@ -40,7 +40,7 @@ resource "aws_lambda_function" "example" {
   # is the name of the property under which the handler function was
   # exported in that file.
   handler = "main.handler"
-  runtime = "nodejs8.10"
+  runtime = "nodejs12.x"
 
   role = "${aws_iam_role.lambda_exec.arn}"
   depends_on = ["aws_s3_bucket_object.fileobject"]
