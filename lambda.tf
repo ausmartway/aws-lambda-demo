@@ -52,7 +52,7 @@ resource "aws_lambda_function" "example" {
   runtime = "nodejs12.x"
 
   role = aws_iam_role.lambda_exec.arn
-  depends_on = ["aws_s3_bucket_object.fileobject"]
+  depends_on = [aws_s3_bucket_object.fileobject]
 }
 
 # IAM role which dictates what other AWS services the Lambda function
