@@ -51,7 +51,7 @@ resource "aws_lambda_function" "example" {
   handler = "main.handler"
   runtime = "nodejs12.x"
 
-  role = "${aws_iam_role.lambda_exec.arn}"
+  role = aws_iam_role.lambda_exec.arn
   depends_on = ["aws_s3_bucket_object.fileobject"]
 }
 
