@@ -34,7 +34,7 @@ resource "aws_s3_bucket_object" "fileobject" {
   # For Terraform 0.11.11 and earlier, use the md5() function and the file() function:
   # etag = "${md5(file("path/to/file"))}"
   etag = filemd5("${path.module}/lambda/main.js")
-   depends_on = ["aws_s3_bucket.s3bucket"]
+   depends_on = [aws_s3_bucket.s3bucket]
 }
 
 
